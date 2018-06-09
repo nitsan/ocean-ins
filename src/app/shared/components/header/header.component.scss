@@ -1,0 +1,22 @@
+@import "../../../styles/colors.scss";
+
+.big-logo {
+  width: 450px;
+}
+
+#menu-primary {
+  li {
+    a {
+      color: $dark-grey;
+    }
+    &.current-menu-item {
+      a {
+        color: $green;
+      }
+    }
+  }
+  .sub-menu {
+    right: 0;
+  }
+}
+
