@@ -131,6 +131,11 @@
     },
     "@schematics/angular:directive": {
       "prefix": "oi"
+    },
+    "@schematics/angular": {
+      "component": {
+        "spec": false
+      }
     }
   }
 }
