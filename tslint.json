@@ -120,13 +120,13 @@
     "directive-selector": [
       true,
       "attribute",
-      "app",
+      "oi",
       "camelCase"
     ],
     "component-selector": [
       true,
       "element",
-      "app",
+      "oi",
       "kebab-case"
     ],
     "angular-whitespace": [true, "check-interpolation"],

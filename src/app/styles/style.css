@@ -259,20 +259,20 @@ textarea {
 	-webkit-appearance: none !important;
 	appearance: none !important;
 }
-input[type="text"],
-input[type="email"],
-input[type="password"],
-textarea {
-	padding: 1%;
-	border: 1px solid #EAEAEA;
-	line-height: 20px;
-	width: 98%;
-	margin: 0 0 30px;
-	background-color: #F8F8F8;
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	border-radius: 3px;
-}
+/*input[type="text"],*/
+/*input[type="email"],*/
+/*input[type="password"],*/
+/*textarea {*/
+	/*padding: 1%;*/
+	/*border: 1px solid #EAEAEA;*/
+	/*line-height: 20px;*/
+	/*width: 98%;*/
+	/*margin: 0 0 30px;*/
+	/*background-color: #F8F8F8;*/
+	/*-webkit-border-radius: 3px;*/
+	/*-moz-border-radius: 3px;*/
+	/*border-radius: 3px;*/
+/*}*/
 input[type="text"]:focus,
 input[type="email"]:focus,
 input[type="search"]:focus,
@@ -589,9 +589,8 @@ nav li > ol {
 	padding-top: 5px;
 }
 .main-navigation li {
-	float: left;
 	position: relative;
-	padding: 0 0 0 25px;
+	padding: 0 0 25px 25px;
 	font-family: 'Lato', sans-serif;
 }
 .main-navigation ul li a {
@@ -646,6 +645,7 @@ li.default-menu {
 	float: none;
 	border-bottom: 1px solid #EAEAEA;
 	padding: 0;
+  background-color: white;
 }
 .main-navigation ul li ul li a,
 .main-navigation ul li.current-menu-item ul li a,
@@ -972,7 +972,6 @@ li.default-menu {
 	padding: 0px 0px 30px;
 }
 .tg-one-fourth {
-	float: left;
 	width: 23.1527094%;
 	margin: 0 2.46305419% 0 0;
 	padding: 0px 0px 30px;
@@ -1575,9 +1574,6 @@ li.default-menu {
 	padding-top: 30px;
 	padding-bottom: 10px;
 	color: #999999;
-}
-.footer-widgets-area .tg-one-fourth .widget-title {
-	text-align: left;
 }
 .footer-widgets-area h3.widget-title {
 	color: #D5D5D5;

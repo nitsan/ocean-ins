@@ -1,4 +1,4 @@
-@import "../../../styles/colors.scss";
+@import "../../styles/colors";
 
 .big-logo {
   width: 450px;
@@ -6,8 +6,12 @@
 
 #menu-primary {
   li {
+    cursor: pointer;
     a {
       color: $dark-grey;
+      &:hover {
+        color: $light-green;
+      }
     }
     &.current-menu-item {
       a {

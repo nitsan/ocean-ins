@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ContactUsComponent } from './components/contact-us/contact-us.component';
+import { ContactUsComponent } from './contact-us.component';
 
 @NgModule({
   imports: [

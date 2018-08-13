@@ -1,6 +1,6 @@
 export interface IPage {
   display: string;
-  url: string;
+  url?: string;
   children?: IPage[];
 }
 
@@ -11,32 +11,31 @@ export const headerConfig = {
       url: '/about'
     }, {
       display: 'ביטוחים',
-      url: '/insurance',
       children: [
         {
           display: 'ביטוח רכב',
-          url: ''
+          url: '/insurance/car'
         }, {
           display: 'ביטוח דירה',
-          url: ''
+          url: '/insurance/house'
         }, {
           display: 'ביטוח עסק',
-          url: ''
+          url: '/insurance/business'
         }, {
           display: 'ביטוח חו"ל',
-          url: ''
+          url: '/insurance/travel'
         }, {
           display: 'ביטוח חיים',
-          url: ''
+          url: '/insurance/life'
         }, {
           display: 'ביטוח בריאות וסיעוד',
-          url: ''
+          url: '/insurance/health'
         }, {
           display: 'חסכון פנסיוני',
-          url: ''
+          url: '/insurance/pension-saving'
         }, {
           display: 'פתרונות פיננסים',
-          url: ''
+          url: '/insurance/pension-solutions'
         }
       ]
     }, {
@@ -44,23 +43,22 @@ export const headerConfig = {
       url: '/price-offers'
     }, {
       display: 'מידע אישי',
-      url: '/personal-info',
       children: [
         {
           display: 'מה עושים בעת תאונה?',
-          url: ''
+          url: '/personal-info/accident'
         }, {
           display: 'דיווח ראשוני על תאונה',
-          url: ''
+          url: '/personal-info/initial-reporting-accident'
         }, {
           display: 'איתור שירותי גרירה',
-          url: ''
+          url: '/personal-info/towing-services'
         }, {
           display: 'איתור נזקי צנרת',
-          url: ''
+          url: '/personal-info/pipe-damage'
         }, {
           display: 'טפסים ומסמכים',
-          url: ''
+          url: '/personal-info/docs'
         },
       ]
     }, {

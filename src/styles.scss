@@ -1,6 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~bootstrap/dist/css/bootstrap.css';
+@import "./app/styles/rtl.css";
+@import "./app/styles/style.css";
+@import "./app/styles/colors.scss";
 
 .hebrew {
   direction: rtl;
+}
+body {
+  text-align: initial;
+}
+a {
+  color: $green;
+  &:hover {
+    color: $light-green;
+  }
+}
+input.form-control {
+  background: white;
+}
+.btn-primary {
+  background-color: $green;
+  &:hover {
+    background-color: $light-green;
+  }
 }
