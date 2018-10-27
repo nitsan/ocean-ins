@@ -34,7 +34,7 @@
                 <a *ngIf="!item.url">{{item.display}} <i class="fas fa-sort-down"></i></a>
                 <ul class="sub-menu" *ngIf="item.children">
                   <li *ngFor="let subItem of item.children">
-                    <a href="{{subItem.url}}">{{subItem.display}}</a></li>
+                    <a routerLink="{{subItem.url}}" routerLinkActive="active">{{subItem.display}}</a></li>
                 </ul>
               </li>
 

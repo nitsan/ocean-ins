@@ -26,6 +26,9 @@ import {PersonalInfoModule} from './personal-info/personal-info.module';
     PriceOffersModule,
     PersonalInfoModule
   ],
+  exports: [
+    AppRoutingModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
