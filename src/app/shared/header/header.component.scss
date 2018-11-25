@@ -9,7 +9,11 @@
     cursor: pointer;
     a {
       color: $dark-grey;
+      outline: 0;
       &:hover {
+        color: $light-green;
+      }
+      &.active {
         color: $light-green;
       }
     }

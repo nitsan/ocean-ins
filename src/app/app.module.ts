@@ -10,6 +10,8 @@ import {ContactUsModule} from './contact-us/contact-us.module';
 import {InsuranceModule} from './insurance/insurance.module';
 import {PriceOffersModule} from './price-offers/price-offers.module';
 import {PersonalInfoModule} from './personal-info/personal-info.module';
+import {ReactiveFormsModule} from '@angular/forms';
+import {HomeModule} from './home/home.module';
 
 
 @NgModule({
@@ -20,11 +22,13 @@ import {PersonalInfoModule} from './personal-info/personal-info.module';
     BrowserModule,
     SharedModule,
     AppRoutingModule,
+    HomeModule,
     AboutModule,
     ContactUsModule,
     InsuranceModule,
     PriceOffersModule,
-    PersonalInfoModule
+    PersonalInfoModule,
+    ReactiveFormsModule
   ],
   exports: [
     AppRoutingModule

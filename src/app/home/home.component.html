@@ -1,0 +1,22 @@
+<!--<img class="logo" src="assets/images/ocean01.jpeg" alt="">-->
+<!--<img class="logo" src="assets/images/37132.jpg" alt="">-->
+<slideshow class="slide-show" [imageUrls]="images" [autoPlay]="true" [backgroundSize]="'contain'"></slideshow>
+<div class="info-box price-offers">
+  <!--<h2 class="title">הצעות מחיר</h2>-->
+  <div class="insurance-container">
+    <div class="insurance-option" *ngFor="let insurance of insurances">
+      <i ngClass="{{insurance.icon}}"></i>
+      <p>{{insurance.title}}</p>
+    </div>
+  </div>
+</div>
+<!--<div class="info-box personal-info">-->
+  <!--<h2>מידע אישי</h2>-->
+  <!--<p>ניתן לבצע מגוון פעולות כגון:</p>-->
+<!--</div>-->
+<div class="info-box articles">
+  <h2>כתבות מהעיתונות</h2>
+  <div class="press-article" *ngFor="let article of articles">
+    <a target="_blank" [attr.href]="article.link">{{article.title}}</a>
+  </div>
+</div>

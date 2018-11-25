@@ -1,0 +1,64 @@
+@import "../styles/colors.scss";
+@import "../styles/mixins.scss";
+
+.slide-show {
+  display: block;
+  height: 300px;
+  @include desktop {
+    height: 500px;
+  }
+}
+
+.logo {
+  margin: 0 auto;
+  display: block;
+}
+
+.info-box {
+  margin: 10px 0;
+  padding: 15px;
+  @include desktop {
+    padding: 55px;
+  }
+
+}
+
+.price-offers {
+  .insurance-container {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    @include desktop {
+      flex-direction: row;
+    }
+
+    .insurance-option {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+
+      &:hover {
+        cursor: pointer;
+
+        i, p {
+          color: $green;
+        }
+      }
+
+      i {
+        font-size: 100px;
+        color: $light-green;
+      }
+
+      p {
+        text-align: center;
+        font-size: 25px;
+        margin-top: 15px;
+      }
+    }
+  }
+}
+
+.press-article {
+  margin-bottom: 5px;
+}
