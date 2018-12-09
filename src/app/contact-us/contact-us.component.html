@@ -1,42 +1,85 @@
 <section class="container">
   <h2>צור קשר</h2>
   <div class="row">
-    <div class="col-8">
-      <form>
+    <div class="col-sm-12 col-md-8">
+      <form [hidden]="showSentMessage" [formGroup]="contactUsForm">
         <div class="form-group">
           <label for="firstName">שם פרטי</label>
-          <input type="text" class="form-control" id="firstName">
+          <input type="text" class="form-control" id="firstName" formControlName="firstName">
+          <div *ngIf="firstName.invalid && firstName.touched"
+               class="alert alert-danger">
+            <div *ngIf="firstName.errors.required">
+              יש להזין שם פרטי
+            </div>
+            <div *ngIf="firstName.errors.minlength">
+             שם פרטי צריך להכיל לפחות 2 תווים
+            </div>
+          </div>
         </div>
         <div class="form-group">
           <label for="lastName">שם משפחה</label>
-          <input type="text" class="form-control" id="lastName">
+          <input type="text" class="form-control" id="lastName" formControlName="lastName">
+          <div *ngIf="lastName.invalid && lastName.touched"
+               class="alert alert-danger">
+            <div *ngIf="lastName.errors.required">
+              יש להזין שם פרטי
+            </div>
+            <div *ngIf="lastName.errors.minlength">
+              שם פרטי צריך להכיל לפחות 2 תווים
+            </div>
+          </div>
         </div>
         <div class="form-group">
           <label for="exampleInputEmail1">כתובת אימייל</label>
-          <input type="email" class="form-control" id="exampleInputEmail1">
+          <input type="email" class="form-control" id="exampleInputEmail1" formControlName="email">
+          <div *ngIf="email.invalid && email.touched"
+               class="alert alert-danger">
+            <div *ngIf="email.errors.email">
+              יש להזין כתובת מייל חוקית
+            </div>
+          </div>
         </div>
         <div class="form-group">
           <label for="phone">טלפון נייד</label>
-          <input type="phone" class="form-control" id="phone">
+          <input type="tel" class="form-control" id="phone" formControlName="phone">
+          <div *ngIf="phone.invalid && phone.touched"
+               class="alert alert-danger">
+            <div *ngIf="phone.errors.required">
+              יש להזין מספר טלפון
+            </div>
+            <div *ngIf="phone.errors.minlength">
+              יש להזין מספר טלפון חוקי
+            </div>
+          </div>
         </div>
         <div class="form-group">
           <label for="message">הודעה</label>
-          <textarea type="text" class="form-control" id="message"></textarea>
+          <textarea type="text" class="form-control" id="message" formControlName="message"></textarea>
+          <div *ngIf="message.invalid && message.touched"
+               class="alert alert-danger">
+            <div *ngIf="message.errors.required">
+              יש להזין תוכן בהודעה
+            </div>
+            <div *ngIf="message.errors.minlength">
+              הודעה קצרה מידי
+            </div>
+          </div>
         </div>
         <div class="form-check">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1" formControlName="isCustomer">
           <label class="form-check-label" for="exampleCheck1">האם אתה מבוטח שלנו?</label>
         </div>
-        <button type="submit" class="btn btn-primary">שלח</button>
+        <oi-button (buttonClick)="onSendClick()" [isLoading]="isLoading"></oi-button>
       </form>
+      <div  class="alert alert-success" *ngIf="showSentMessage">הודעתך נשלחה, ניצור איתך קשר בקרוב</div>
     </div>
-    <div class="col-4" id="secondary">
+    <div class="col-sm-12 col-md-4" id="secondary">
       <aside id="text-2" class="widget widget_text"><h3 class="widget-title"><span>מידע</span></h3>
         <div class="textwidget">
           <ul>
             <li><i class="fas fa-phone"></i> טלפון: 09-7441873</li>
             <li><i class="fas fa-fax"></i> פקס: 09-7416763</li>
-            <li><i class="fas fa-at"></i> מייל: <a href="mailto:name@email.com">office@ocean-ins.co.il</a></li>
+            <li><i class="fas fa-at"></i> מייל: <a href="mailto:firstName@email.com">office@ocean-ins.co.il</a></li>
             <li><i class="fab fa-facebook-square"></i><a href="https://www.facebook.com/oceaninsu/" target="_blank"> בקרו אותנו בפייסבוק</a></li>
           </ul>
         </div>
