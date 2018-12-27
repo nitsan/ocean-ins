@@ -8,12 +8,18 @@ import {headerConfig, IPage} from './header.config';
 })
 export class HeaderComponent implements OnInit {
   public menuItems: IPage[];
+  public isMenuOpen: boolean;
 
   constructor() {
     this.menuItems = headerConfig.pages;
+    this.isMenuOpen = false;
   }
 
   ngOnInit() {
+  }
+
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
   }
 
 }

@@ -4,25 +4,59 @@
   width: 450px;
 }
 
+#site-navigation {
+  .menu-toggle {
+    background-color: $green;
+
+    &:active {
+      opacity: 0.7;
+    }
+  }
+}
+
+.menu-primary-container {
+  left: 0;
+  position: absolute;
+  width: 100%;
+  z-index: 9999;
+
+  #menu-primary {
+    .menu-item {
+      a {
+        color: white;
+
+        &.active {
+          color: $light-green;
+        }
+      }
+    }
+  }
+}
+
 #menu-primary {
   li {
     cursor: pointer;
+
     a {
       color: $dark-grey;
       outline: 0;
+
       &:hover {
         color: $light-green;
       }
+
       &.active {
         color: $light-green;
       }
     }
+
     &.current-menu-item {
       a {
         color: $green;
       }
     }
   }
+
   .sub-menu {
     right: 0;
   }

@@ -24,17 +24,17 @@
               <!--</div>-->
             <!--</form>&lt;!&ndash; .searchform &ndash;&gt;</aside>-->
         <!--</div>-->
-        <nav id="site-navigation" class="main-navigation" role="navigation">
-          <h3 class="menu-toggle">תפריט</h3>
+        <nav id="site-navigation" role="navigation" [ngClass]="{'main-navigation': !isMenuOpen, 'main-small-navigation': isMenuOpen}">
+          <h3 class="menu-toggle" (click)="toggleMenu()">תפריט</h3>
           <div class="menu-primary-container">
             <ul id="menu-primary" class="menu nav-menu">
 
-              <li *ngFor="let item of menuItems" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home page_item page-item-7 current_page_item menu-item-9">
-                <a *ngIf="item.url" routerLink="{{item.url}}" routerLinkActive="active">{{item.display}}</a>
-                <a *ngIf="!item.url">{{item.display}} <i class="fas fa-sort-down"></i></a>
-                <ul class="sub-menu" *ngIf="item.children">
+              <li *ngFor="let item of menuItems" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home page_item page-item-7 menu-item-9">
+                <a *ngIf="item.url" routerLink="{{item.url}}" routerLinkActive="active" (click)="toggleMenu()">{{item.display}}</a>
+                <a *ngIf="!item.url" (click)="item.isOpen = !item.isOpen">{{item.display}} <i class="fas fa-sort-down"></i></a>
+                <ul class="sub-menu" *ngIf="item.children"  [ngClass]="{'hide-me': !item.isOpen}">
                   <li *ngFor="let subItem of item.children">
-                    <a routerLink="{{subItem.url}}" routerLinkActive="active">{{subItem.display}}</a></li>
+                    <a routerLink="{{subItem.url}}" routerLinkActive="active" (click)="toggleMenu()">{{subItem.display}}</a></li>
                 </ul>
               </li>
             </ul>
