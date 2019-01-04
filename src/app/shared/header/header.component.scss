@@ -1,4 +1,5 @@
 @import "../../styles/colors";
+@import "../../styles/mixins.scss";
 
 .big-logo {
   width: 450px;
@@ -19,40 +20,38 @@
   position: absolute;
   width: 100%;
   z-index: 9999;
+  @include desktop {
+    position: initial;
+  }
 
   #menu-primary {
     .menu-item {
+      cursor: pointer;
       a {
         color: white;
+        @include desktop {
+          color: $dark-grey;
+          outline: 0;
+
+          &:hover {
+            color: $light-green;
+          }
+
+          &.active {
+            color: $light-green;
+          }
+        }
 
         &.active {
           color: $light-green;
         }
-      }
-    }
-  }
-}
-
-#menu-primary {
-  li {
-    cursor: pointer;
-
-    a {
-      color: $dark-grey;
-      outline: 0;
-
-      &:hover {
-        color: $light-green;
-      }
-
-      &.active {
-        color: $light-green;
-      }
-    }
-
-    &.current-menu-item {
-      a {
-        color: $green;
+        @include desktop {
+          &.current-menu-item {
+            a {
+              color: $green;
+            }
+          }
+        }
       }
     }
   }
@@ -61,4 +60,3 @@
     right: 0;
   }
 }
-
