@@ -12,10 +12,10 @@ export class HeaderComponent implements OnInit {
   public isMenuOpen: boolean;
   private readonly isMobile: boolean;
 
-  constructor(private userAgentService: UserAgentService) {
+  constructor() {
     this.menuItems = headerConfig.pages;
     this.isMenuOpen = false;
-    this.isMobile = userAgentService.isMobile();
+    this.isMobile = UserAgentService.isMobile();
   }
 
   ngOnInit() {

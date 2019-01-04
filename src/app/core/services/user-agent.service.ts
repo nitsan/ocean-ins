@@ -1,8 +1,3 @@
-import {Injectable} from '@angular/core';
-
-@Injectable({
-  providedIn: 'root'
-})
 export class UserAgentService {
 
   constructor() {
@@ -28,8 +23,7 @@ export class UserAgentService {
     return !!navigator.userAgent.match(/IEMobile/i);
   }
 
-  isMobile(): boolean {
-    console.log(navigator.userAgent);
+  static isMobile(): boolean {
     return (UserAgentService.isAndroid() || UserAgentService.isBlackBerry() || UserAgentService.isIos() ||
       UserAgentService.isOpera() || UserAgentService.isWindows());
   }

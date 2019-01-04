@@ -40,7 +40,18 @@ export const headerConfig = {
       ]
     }, {
       display: 'הצעות מחיר',
-      url: '/price-offers'
+      children: [
+        {
+          display: 'ביטוח רכב',
+          url: '/price-offers/car'
+        }, {
+          display: 'ביטוח דירה',
+          url: '/price-offers/house'
+        }, {
+          display: 'ביטוח משכנתא',
+          url: '/price-offers/mortgage'
+        },
+      ]
     }, {
       display: 'מידע אישי',
       children: [
