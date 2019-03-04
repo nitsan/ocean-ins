@@ -1,3 +1,21 @@
-<p>
-  price-offer-car works!
-</p>
+<section class="container">
+  <div *ngIf="!showSuccessMessage">
+    <mat-vertical-stepper class="car-stepper" [linear]="true">
+      <mat-step [completed]="true">
+        <ng-template matStepLabel>פרטי המבוטח</ng-template>
+        <oi-car-offer-personal (nextClicked)="saveForm($event)"></oi-car-offer-personal>
+      </mat-step>
+      <mat-step>
+        <ng-template matStepLabel>פרטי הרכב</ng-template>
+        <oi-car-offer-car-details (nextClicked)="saveForm($event)"></oi-car-offer-car-details>
+      </mat-step>
+      <mat-step>
+        <ng-template matStepLabel>פרטי הביטוח</ng-template>
+        <oi-car-offer-insurance-details (nextClicked)="saveForm($event)" [isLoading]="isLoading"></oi-car-offer-insurance-details>
+      </mat-step>
+    </mat-vertical-stepper>
+  </div>
+  <div class="alert alert-success" *ngIf="showSuccessMessage">
+    הודעתך נשלחה, ניצור איתך קשר בקרוב
+  </div>
+</section>

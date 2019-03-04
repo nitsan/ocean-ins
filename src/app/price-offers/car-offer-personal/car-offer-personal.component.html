@@ -1,0 +1,39 @@
+<form class="column-form" [formGroup]="personalInfoForm">
+  <mat-form-field>
+    <input matInput placeholder="{{priceOffersData.firstName.display}}" type="text" formControlName="firstName"
+           name="firstName">
+    <mat-error
+      *ngIf="personalInfoForm.get(priceOffersData.firstName.key).invalid">{{getErrorMessage(priceOffersData.firstName)}}</mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="{{priceOffersData.lastName.display}}" type="text" formControlName="lastName"
+           name="lastName">
+    <mat-error
+      *ngIf="personalInfoForm.get(priceOffersData.lastName.key).invalid">{{getErrorMessage(priceOffersData.lastName)}}</mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="{{priceOffersData.id.display}}" type="text" formControlName="id" name="id">
+    <mat-error
+      *ngIf="personalInfoForm.get(priceOffersData.id.key).invalid">{{getErrorMessage(priceOffersData.id)}}</mat-error>
+    <mat-hint>כולל ספרת ביקורת</mat-hint>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput [max]="maxDate" [matDatepicker]="picker" placeholder="{{priceOffersData.birthday.display}}"
+           formControlName="birthday" name="birthday" disabled>
+    <mat-error
+      *ngIf="personalInfoForm.get(priceOffersData.birthday.key).invalid">{{getErrorMessage(priceOffersData.birthday)}}</mat-error>
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker disabled="false"></mat-datepicker>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="{{priceOffersData.phone.display}}" type="tel" formControlName="phone" name="phone">
+    <mat-error
+      *ngIf="personalInfoForm.get(priceOffersData.phone.key).invalid">{{getErrorMessage(priceOffersData.phone)}}</mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="{{priceOffersData.email.display}}" type="email" formControlName="email" name="email">
+    <mat-error
+      *ngIf="personalInfoForm.get(priceOffersData.email.key).invalid">{{getErrorMessage(priceOffersData.email)}}</mat-error>
+  </mat-form-field>
+</form>
+<button mat-button (click)="saveForm()">הבא</button>

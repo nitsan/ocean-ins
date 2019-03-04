@@ -1,74 +1,29 @@
 <section class="container">
   <h2>צור קשר</h2>
   <div class="row">
-    <div class="col-sm-12 col-md-8">
-      <form [hidden]="showSentMessage" [formGroup]="contactUsForm">
-        <div class="form-group">
-          <label for="firstName">שם פרטי</label>
-          <input type="text" class="form-control" id="firstName" formControlName="firstName">
-          <div *ngIf="firstName.invalid && firstName.touched"
-               class="alert alert-danger">
-            <div *ngIf="firstName.errors.required">
-              יש להזין שם פרטי
-            </div>
-            <div *ngIf="firstName.errors.minlength">
-             שם פרטי צריך להכיל לפחות 2 תווים
-            </div>
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="lastName">שם משפחה</label>
-          <input type="text" class="form-control" id="lastName" formControlName="lastName">
-          <div *ngIf="lastName.invalid && lastName.touched"
-               class="alert alert-danger">
-            <div *ngIf="lastName.errors.required">
-              יש להזין שם פרטי
-            </div>
-            <div *ngIf="lastName.errors.minlength">
-              שם פרטי צריך להכיל לפחות 2 תווים
-            </div>
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="exampleInputEmail1">כתובת אימייל</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" formControlName="email">
-          <div *ngIf="email.invalid && email.touched"
-               class="alert alert-danger">
-            <div *ngIf="email.errors.email">
-              יש להזין כתובת מייל חוקית
-            </div>
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="phone">טלפון נייד</label>
-          <input type="tel" class="form-control" id="phone" formControlName="phone">
-          <div *ngIf="phone.invalid && phone.touched"
-               class="alert alert-danger">
-            <div *ngIf="phone.errors.required">
-              יש להזין מספר טלפון
-            </div>
-            <div *ngIf="phone.errors.minlength">
-              יש להזין מספר טלפון חוקי
-            </div>
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="message">הודעה</label>
-          <textarea type="text" class="form-control" id="message" formControlName="message"></textarea>
-          <div *ngIf="message.invalid && message.touched"
-               class="alert alert-danger">
-            <div *ngIf="message.errors.required">
-              יש להזין תוכן בהודעה
-            </div>
-            <div *ngIf="message.errors.minlength">
-              הודעה קצרה מידי
-            </div>
-          </div>
-        </div>
-        <div class="form-check">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1" formControlName="isCustomer">
-          <label class="form-check-label" for="exampleCheck1">האם אתה מבוטח שלנו?</label>
-        </div>
+    <div class="col-sm-12 col-md-6 offset-md-2">
+      <form class="column-form" *ngIf="!showSentMessage" [formGroup]="contactUsForm">
+        <mat-form-field>
+          <input matInput placeholder="{{formFieldsData.firstName.display}}" type="text" formControlName="firstName" name="firstName">
+          <mat-error *ngIf="contactUsForm.get(formFieldsData.firstName.key).invalid">{{getErrorMessage(formFieldsData.firstName)}}</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="{{formFieldsData.lastName.display}}" type="text" formControlName="lastName" name="lastName">
+          <mat-error *ngIf="contactUsForm.get(formFieldsData.lastName.key).invalid">{{getErrorMessage(formFieldsData.lastName)}}</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="{{formFieldsData.email.display}}" type="email" formControlName="email" name="email">
+          <mat-error *ngIf="contactUsForm.get(formFieldsData.email.key).invalid">{{getErrorMessage(formFieldsData.email)}}</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="{{formFieldsData.phone.display}}" type="tel" formControlName="phone" name="phone">
+          <mat-error *ngIf="contactUsForm.get(formFieldsData.phone.key).invalid">{{getErrorMessage(formFieldsData.phone)}}</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <textarea class="message-box" matInput placeholder="{{formFieldsData.message.display}}" formControlName="message"></textarea>
+          <mat-error *ngIf="contactUsForm.get(formFieldsData.message.key).invalid">{{getErrorMessage(formFieldsData.message)}}</mat-error>
+        </mat-form-field>
+        <mat-checkbox class="form-check" formControlName="isCustomer">האם אתה מבוטח שלנו?</mat-checkbox>
         <oi-button (buttonClick)="onSendClick()" [isLoading]="isLoading"></oi-button>
       </form>
       <div  class="alert alert-success" *ngIf="showSentMessage">הודעתך נשלחה, ניצור איתך קשר בקרוב</div>

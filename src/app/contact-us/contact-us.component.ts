@@ -1,6 +1,8 @@
 import {Component} from '@angular/core';
 import {EmailsService} from '../shared/emails/emails.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {FieldData, formFieldsData} from '../core/config/form-fields.data';
+import {FormValidationService} from '../core/services/form-validation.service';
 
 @Component({
   selector: 'oi-contact-us',
@@ -11,8 +13,9 @@ export class ContactUsComponent {
   public contactUsForm: FormGroup;
   public isLoading: boolean;
   public showSentMessage: boolean;
+  public formFieldsData = formFieldsData;
 
-  constructor(private fb: FormBuilder, private emailsService: EmailsService) {
+  constructor(private fb: FormBuilder, private emailsService: EmailsService, private formValidationService: FormValidationService) {
     this.isLoading = false;
     this.showSentMessage = false;
     this.contactUsForm = this.fb.group({
@@ -45,10 +48,14 @@ export class ContactUsComponent {
     return this.contactUsForm.get('message');
   }
 
+  getErrorMessage(fieldData: FieldData): string {
+    return this.formValidationService.getError(this.contactUsForm.get(fieldData.key), fieldData);
+  }
+
   onSendClick() {
     if (this.contactUsForm.valid) {
       this.isLoading = true;
-      return this.emailsService.sendEmail(this.contactUsForm.value)
+      return this.emailsService.sendEmail(this.contactUsForm.value, 'ocean-contact-us')
         .then(() => {
           this.isLoading = false;
           this.showSentMessage = true;

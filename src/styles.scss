@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
-@import '~bootstrap/dist/css/bootstrap.css';
+@import './styles/bootstrap';
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import "./app/styles/rtl.css";
 @import "./app/styles/style.css";
 @import "./app/styles/colors.scss";
@@ -7,22 +8,39 @@
 .hebrew {
   direction: rtl;
 }
+
 body {
   text-align: initial;
 }
+
 a {
   color: $green;
+
   &:hover {
     color: $light-green;
   }
 }
+
 input.form-control {
   background: white;
 }
+
 .alert-danger {
   padding: 0 5px;
   font-size: 13px;
 }
+
 .hide-me {
   display: none;
+}
+
+input[type="text"] {
+  &:focus {
+    border: none;
+  }
+}
+
+.column-form {
+  display: flex;
+  flex-direction: column;
 }
