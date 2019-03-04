@@ -7,6 +7,10 @@ export interface IPage {
 export const headerConfig = {
   pages: [
     {
+      display: 'בית',
+      url: '/home'
+    },
+    {
       display: 'אודות',
       url: '/about'
     }, {
@@ -38,40 +42,40 @@ export const headerConfig = {
           url: '/insurance/pension-solutions'
         }
       ]
-    }, {
-      display: 'הצעות מחיר',
-      children: [
-        {
-          display: 'ביטוח רכב',
-          url: '/price-offers/car'
-        }, {
-          display: 'ביטוח דירה',
-          url: '/price-offers/house'
-        }, {
-          display: 'ביטוח משכנתא',
-          url: '/price-offers/mortgage'
-        },
-      ]
-    }, {
-      display: 'מידע אישי',
-      children: [
-        {
-          display: 'מה עושים בעת תאונה?',
-          url: '/personal-info/accident'
-        }, {
-          display: 'דיווח ראשוני על תאונה',
-          url: '/personal-info/initial-reporting-accident'
-        }, {
-          display: 'איתור שירותי גרירה',
-          url: '/personal-info/towing-services'
-        }, {
-          display: 'איתור נזקי צנרת',
-          url: '/personal-info/pipe-damage'
-        }, {
-          display: 'טפסים ומסמכים',
-          url: '/personal-info/docs'
-        },
-      ]
+      // }, {
+      //   display: 'הצעות מחיר',
+      //   children: [
+      //     {
+      //       display: 'ביטוח רכב',
+      //       url: '/price-offers/car'
+      //     }, {
+      //       display: 'ביטוח דירה',
+      //       url: '/price-offers/house'
+      //     }, {
+      //       display: 'ביטוח משכנתא',
+      //       url: '/price-offers/mortgage'
+      //     },
+      //   ]
+      // }, {
+      //   display: 'מידע אישי',
+      //   children: [
+      //     {
+      //       display: 'מה עושים בעת תאונה?',
+      //       url: '/personal-info/accident'
+      //     }, {
+      //       display: 'דיווח ראשוני על תאונה',
+      //       url: '/personal-info/initial-reporting-accident'
+      //     }, {
+      //       display: 'איתור שירותי גרירה',
+      //       url: '/personal-info/towing-services'
+      //     }, {
+      //       display: 'איתור נזקי צנרת',
+      //       url: '/personal-info/pipe-damage'
+      //     }, {
+      //       display: 'טפסים ומסמכים',
+      //       url: '/personal-info/docs'
+      //     },
+      //   ]
     }, {
       display: 'צור קשר',
       url: '/contact-us'

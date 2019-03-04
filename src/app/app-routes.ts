@@ -19,6 +19,9 @@ import {PriceOfferMortgageComponent} from './price-offers/price-offer-mortgage/p
 
 const appRoutes: Routes = [
   {
+    path: 'home', component: HomeComponent,
+  },
+  {
     path: 'about', component: AboutComponent
   },
   {
@@ -47,7 +50,7 @@ const appRoutes: Routes = [
     path: 'contact-us', component: ContactUsComponent
   },
   {
-    path: '', component: HomeComponent, pathMatch: 'full'
+    path: '', redirectTo: 'home', pathMatch: 'full'
   },
   {
     path: '**', component: NotFoundComponent
