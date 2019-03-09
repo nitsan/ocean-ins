@@ -6,7 +6,7 @@
   <div class="insurance-container">
     <div class="insurance-option" *ngFor="let insurance of insurances">
       <i ngClass="{{insurance.icon}}"></i>
-      <p>{{insurance.title}}</p>
+      <p>{{ insurance.title }}</p>
     </div>
   </div>
 </div>
@@ -17,6 +17,6 @@
 <div class="info-box articles">
   <h2>כתבות מהעיתונות</h2>
   <div class="press-article" *ngFor="let article of articles">
-    <a target="_blank" [attr.href]="article.link">{{article.title}}</a>
+    <a target="_blank" [attr.href]="article.link">{{ article.title }}</a>
   </div>
 </div>

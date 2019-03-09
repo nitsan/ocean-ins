@@ -5,23 +5,23 @@
       <form class="column-form" *ngIf="!showSentMessage" [formGroup]="contactUsForm">
         <mat-form-field>
           <input matInput placeholder="{{formFieldsData.firstName.display}}" type="text" formControlName="firstName" name="firstName">
-          <mat-error *ngIf="contactUsForm.get(formFieldsData.firstName.key).invalid">{{getErrorMessage(formFieldsData.firstName)}}</mat-error>
+          <mat-error *ngIf="contactUsForm.get(formFieldsData.firstName.key).invalid">{{ getErrorMessage(formFieldsData.firstName) }}</mat-error>
         </mat-form-field>
         <mat-form-field>
           <input matInput placeholder="{{formFieldsData.lastName.display}}" type="text" formControlName="lastName" name="lastName">
-          <mat-error *ngIf="contactUsForm.get(formFieldsData.lastName.key).invalid">{{getErrorMessage(formFieldsData.lastName)}}</mat-error>
+          <mat-error *ngIf="contactUsForm.get(formFieldsData.lastName.key).invalid">{{ getErrorMessage(formFieldsData.lastName) }}</mat-error>
         </mat-form-field>
         <mat-form-field>
           <input matInput placeholder="{{formFieldsData.email.display}}" type="email" formControlName="email" name="email">
-          <mat-error *ngIf="contactUsForm.get(formFieldsData.email.key).invalid">{{getErrorMessage(formFieldsData.email)}}</mat-error>
+          <mat-error *ngIf="contactUsForm.get(formFieldsData.email.key).invalid">{{ getErrorMessage(formFieldsData.email) }}</mat-error>
         </mat-form-field>
         <mat-form-field>
           <input matInput placeholder="{{formFieldsData.phone.display}}" type="tel" formControlName="phone" name="phone">
-          <mat-error *ngIf="contactUsForm.get(formFieldsData.phone.key).invalid">{{getErrorMessage(formFieldsData.phone)}}</mat-error>
+          <mat-error *ngIf="contactUsForm.get(formFieldsData.phone.key).invalid">{{ getErrorMessage(formFieldsData.phone) }}</mat-error>
         </mat-form-field>
         <mat-form-field>
           <textarea class="message-box" matInput placeholder="{{formFieldsData.message.display}}" formControlName="message"></textarea>
-          <mat-error *ngIf="contactUsForm.get(formFieldsData.message.key).invalid">{{getErrorMessage(formFieldsData.message)}}</mat-error>
+          <mat-error *ngIf="contactUsForm.get(formFieldsData.message.key).invalid">{{ getErrorMessage(formFieldsData.message) }}</mat-error>
         </mat-form-field>
         <mat-checkbox class="form-check" formControlName="isCustomer">האם אתה מבוטח שלנו?</mat-checkbox>
         <oi-button (buttonClick)="onSendClick()" [isLoading]="isLoading"></oi-button>
