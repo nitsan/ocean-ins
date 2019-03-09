@@ -13,6 +13,15 @@ import { PensionComponent } from './pension/pension.component';
   imports: [
     CommonModule
   ],
-  declarations: [InsuranceComponent, CarInsuranceComponent, HouseInsuranceComponent, BusinessInsuranceComponent, LifeInsuranceComponent, HealthInsuranceComponent, TravelInsuranceComponent, PensionComponent]
+  declarations: [
+    InsuranceComponent,
+    CarInsuranceComponent,
+    HouseInsuranceComponent,
+    BusinessInsuranceComponent,
+    LifeInsuranceComponent,
+    HealthInsuranceComponent,
+    TravelInsuranceComponent,
+    PensionComponent]
 })
-export class InsuranceModule { }
+export class InsuranceModule {
+}

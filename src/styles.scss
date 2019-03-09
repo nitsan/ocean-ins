@@ -44,3 +44,13 @@ input[type="text"] {
   display: flex;
   flex-direction: column;
 }
+
+.page-title{
+  color: $dark-grey2;
+  background-color: $light-green;
+  padding: 18px;
+}
+
+section.container {
+  min-height: 400px;
+}
