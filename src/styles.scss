@@ -1,9 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
-@import './styles/bootstrap';
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import './styles/vendors';
 @import "./app/styles/rtl.css";
 @import "./app/styles/style.css";
-@import "./app/styles/colors.scss";
+@import "styles/variables";
+@import "styles/colors";
 @import "styles/fonts";
 
 .hebrew {
@@ -11,10 +11,20 @@
 }
 
 body {
+
   text-align: initial;
 }
 
+html, body, div, span, applet, object, iframe, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+  font-family: $font-family-base;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-family-title;
+}
+
 a {
+  font-family: $font-family-base;
   color: $green;
 
   &:hover {
@@ -46,7 +56,7 @@ input[type="text"] {
   flex-direction: column;
 }
 
-.page-title{
+.page-title {
   color: $dark-grey2;
   background-color: $light-green;
   padding: 18px;
