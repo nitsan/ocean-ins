@@ -4,10 +4,10 @@
 <div class="info-box price-offers">
   <!--<h2 class="title">הצעות מחיר</h2>-->
   <div class="insurance-container">
-    <div class="insurance-option" *ngFor="let insurance of insurances">
+    <a class="insurance-option" *ngFor="let insurance of insurances" [routerLink]="insurance.routerLink">
       <i ngClass="{{insurance.icon}}"></i>
       <p>{{ insurance.title }}</p>
-    </div>
+    </a>
   </div>
 </div>
 <!--<div class="info-box personal-info">-->

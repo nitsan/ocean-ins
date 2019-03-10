@@ -9,16 +9,19 @@ export const homeConfig = {
   insurances: [
     {
       title: 'ביטוח רכב',
-      icon: 'fas fa-car'
+      icon: 'fas fa-car',
+      routerLink: '/insurance/car'
     }, {
       title: 'ביטוח דירה',
-      icon: 'fas fa-home'
+      icon: 'fas fa-home',
+      routerLink: '/insurance/house'
     }, {
       title: 'ביטוח משכנתא',
-      icon: 'fas fa-piggy-bank'
-    // }, {
-    //   title: 'ביטוח נסיעות',
-    //   icon: 'fas fa-plane'
+      icon: 'fas fa-piggy-bank',
+      routerLink: ''
+      // }, {
+      //   title: 'ביטוח נסיעות',
+      //   icon: 'fas fa-plane'
     }
   ],
   articles: [
