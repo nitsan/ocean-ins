@@ -8,20 +8,41 @@ export const homeConfig = {
   ],
   insurances: [
     {
-      title: 'ביטוח רכב',
+      title: 'רכב',
       icon: 'fas fa-car',
       routerLink: '/insurance/car'
     }, {
-      title: 'ביטוח דירה',
+      title: 'דירה',
       icon: 'fas fa-home',
       routerLink: '/insurance/house'
     }, {
-      title: 'ביטוח משכנתא',
+      title: 'משכנתא',
       icon: 'fas fa-piggy-bank',
       routerLink: ''
-      // }, {
-      //   title: 'ביטוח נסיעות',
-      //   icon: 'fas fa-plane'
+    }, {
+      title: 'נסיעות לחו"ל',
+      icon: 'fas fa-plane-departure',
+      routerLink: '/insurance/travel'
+    }, {
+      title: 'בריאות וסיעוד',
+      icon: 'fas fa-file-medical',
+      routerLink: '/insurance/health'
+    }, {
+      title: 'עסק',
+      icon: 'fas fa-briefcase',
+      routerLink: '/insurance/business'
+    }, {
+      title: 'בניה וקבלנים',
+      icon: 'fas fa-hard-hat',
+      routerLink: ''
+    // }, {
+    //   title: 'פיננסים',
+    //   icon: 'fas fa-coins',
+    //   routerLink: '/insurance/pension-solutions'
+    // }, {
+    //   title: 'ביטוח חיים',
+    //   icon: 'fas fa-life-ring',
+    //   routerLink: '/insurance/life'
     }
   ],
   articles: [
