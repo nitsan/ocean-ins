@@ -11,8 +11,9 @@
 }
 
 body {
-
+  background-color: white;
   text-align: initial;
+  padding-bottom: 0;
 }
 
 html, body, div, span, applet, object, iframe, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
@@ -30,6 +31,12 @@ a {
   &:hover {
     color: $light-green;
   }
+}
+
+#page {
+  max-width: none;
+  width: 100%;
+  box-shadow: none;
 }
 
 input.form-control {
@@ -59,7 +66,7 @@ input[type="text"] {
 .page-title {
   color: $dark-grey2;
   background-color: $light-green;
-  padding: 18px;
+  padding: 18px 10% 18px 18px;
 }
 
 section.container {

@@ -15,6 +15,10 @@
   }
 }
 
+#header-right-section {
+  margin-top: 20px;
+}
+
 .menu-primary-container {
   left: 0;
   position: absolute;
@@ -27,6 +31,7 @@
   #menu-primary {
     .menu-item {
       cursor: pointer;
+
       a {
         color: white;
         @include desktop {
@@ -45,6 +50,7 @@
         &.active {
           color: $light-green;
         }
+
         @include desktop {
           &.current-menu-item {
             a {
