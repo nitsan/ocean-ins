@@ -1,0 +1,13 @@
+@import "../styles/mixins.scss";
+
+.container {
+  @include desktop {
+    .info {
+      display: inline-block;
+      width: 67%;
+    }
+    img {
+      width: 33%;
+    }
+  }
+}
