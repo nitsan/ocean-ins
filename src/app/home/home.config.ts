@@ -1,10 +1,10 @@
 export const homeConfig = {
   images: [
-    'assets/images/house.jpg',
     'assets/images/car.jpg',
+    'assets/images/mortgage.jpg',
     'assets/images/life.jpg',
     'assets/images/travel.jpg',
-    'assets/images/all.jpg'
+    'assets/images/mortgage2.jpg'
   ],
   insurances: [
     {
