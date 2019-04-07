@@ -1,0 +1,19 @@
+@import "./variables";
+
+body {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-size: $default-font-size;
+}
+
+p {
+  font-size: $default-font-size;
+}
+
+ul {
+  list-style: circle;
+  padding: 0 0 0 35px;
+  li > ul, li > ol {
+    margin: 0 35px 0 0;
+  }
+}
