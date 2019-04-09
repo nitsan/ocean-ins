@@ -17,35 +17,35 @@ export const headerConfig = {
       display: 'ביטוחים',
       children: [
         {
-          display: 'ביטוח רכב',
+          display: 'רכב',
           url: '/insurance/car'
         }, {
-          display: 'ביטוח דירה',
+          display: 'דירה',
           url: '/insurance/house'
         }, {
-          display: 'ביטוח עסק',
-          url: '/insurance/business'
-        }, {
-          display: 'ביטוח לבנייה',
-          url: '/insurance/construction'
-        }, {
-          display: 'ביטוח משכנתא',
+          display: 'משכנתא',
           url: '/insurance/mortgage'
         }, {
-          display: 'ביטוח חו"ל',
+          display: 'נסיעות לחו"ל',
           url: '/insurance/travel'
         }, {
-          display: 'ביטוח חיים',
-          url: '/insurance/life'
-        }, {
-          display: 'ביטוח בריאות וסיעוד',
+          display: 'בריאות וסיעוד',
           url: '/insurance/health'
         }, {
-          display: 'חסכון פנסיוני',
-          url: '/insurance/pension-saving'
+          display: 'עסק',
+          url: '/insurance/business'
         }, {
-          display: 'פתרונות פיננסים',
-          url: '/insurance/pension-solutions'
+          display: 'בניה וקבלנים',
+          url: '/insurance/construction'
+        // }, {
+        //   display: 'ביטוח חיים',
+        //   url: '/insurance/life'
+        // }, {
+        //   display: 'חסכון פנסיוני',
+        //   url: '/insurance/pension-saving'
+        // }, {
+        //   display: 'פתרונות פיננסים',
+        //   url: '/insurance/pension-solutions'
         }
       ]
       // }, {

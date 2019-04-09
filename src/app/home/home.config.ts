@@ -22,7 +22,7 @@ export const homeConfig = {
     }, {
       title: 'משכנתא',
       icon: 'fas fa-piggy-bank',
-      routerLink: ''
+      routerLink: '/insurance/mortgage'
     }, {
       title: 'נסיעות לחו"ל',
       icon: 'fas fa-plane-departure',
@@ -38,7 +38,7 @@ export const homeConfig = {
     }, {
       title: 'בניה וקבלנים',
       icon: 'fas fa-hard-hat',
-      routerLink: ''
+      routerLink: '/insurance/construction'
     // }, {
     //   title: 'פיננסים',
     //   icon: 'fas fa-coins',
