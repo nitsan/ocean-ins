@@ -25,6 +25,7 @@
     "@angular/platform-browser": "^7.2.11",
     "@angular/platform-browser-dynamic": "^7.2.11",
     "@angular/router": "^7.2.11",
+    "@sentry/browser": "^5.0.6",
     "bootstrap": "^4.2.1",
     "core-js": "^2.6.2",
     "emailjs-com": "^2.2.4",

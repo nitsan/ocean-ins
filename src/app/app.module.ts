@@ -1,7 +1,7 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
-import {NgModule} from '@angular/core';
+import { ErrorHandler, NgModule } from '@angular/core';
 import {AppComponent} from './app.component';
 import {SharedModule} from './shared/shared.module';
 import {AppRoutingModule} from './app-routes';
@@ -12,6 +12,7 @@ import {PriceOffersModule} from './price-offers/price-offers.module';
 import {PersonalInfoModule} from './personal-info/personal-info.module';
 import {ReactiveFormsModule} from '@angular/forms';
 import {HomeModule} from './home/home.module';
+import { SentryErrorHandler } from './core/services/sentry-error-handler';
 
 
 @NgModule({
@@ -34,7 +35,7 @@ import {HomeModule} from './home/home.module';
   exports: [
     AppRoutingModule
   ],
-  providers: [],
+  providers: [{ provide: ErrorHandler, useClass: SentryErrorHandler }],
   bootstrap: [AppComponent]
 })
 export class AppModule {
