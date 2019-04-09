@@ -15,6 +15,8 @@ import {HomeComponent} from './home/home.component';
 import {PriceOfferCarComponent} from './price-offers/price-offer-car/price-offer-car.component';
 import {PriceOfferHouseComponent} from './price-offers/price-offer-house/price-offer-house.component';
 import {PriceOfferMortgageComponent} from './price-offers/price-offer-mortgage/price-offer-mortgage.component';
+import { ConstructionInsuranceComponent } from './insurance/construction-insurance/construction-insurance.component';
+import { MortgageInsuranceComponent } from './insurance/mortgage-insurance/mortgage-insurance.component';
 
 
 const appRoutes: Routes = [
@@ -29,6 +31,8 @@ const appRoutes: Routes = [
       {path: 'car', component: CarInsuranceComponent},
       {path: 'house', component: HouseInsuranceComponent},
       {path: 'business', component: BusinessInsuranceComponent},
+      {path: 'construction', component: ConstructionInsuranceComponent},
+      {path: 'mortgage', component: MortgageInsuranceComponent},
       {path: 'travel', component: TravelInsuranceComponent},
       {path: 'life', component: LifeInsuranceComponent},
       {path: 'health', component: HealthInsuranceComponent},

@@ -26,6 +26,12 @@ export const headerConfig = {
           display: 'ביטוח עסק',
           url: '/insurance/business'
         }, {
+          display: 'ביטוח לבנייה',
+          url: '/insurance/construction'
+        }, {
+          display: 'ביטוח משכנתא',
+          url: '/insurance/mortgage'
+        }, {
           display: 'ביטוח חו"ל',
           url: '/insurance/travel'
         }, {

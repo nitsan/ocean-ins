@@ -8,6 +8,8 @@ import { LifeInsuranceComponent } from './life-insurance/life-insurance.componen
 import { HealthInsuranceComponent } from './health-insurance/health-insurance.component';
 import { TravelInsuranceComponent } from './travel-insurance/travel-insurance.component';
 import { PensionComponent } from './pension/pension.component';
+import { ConstructionInsuranceComponent } from './construction-insurance/construction-insurance.component';
+import { MortgageInsuranceComponent } from './mortgage-insurance/mortgage-insurance.component';
 
 @NgModule({
   imports: [
@@ -21,7 +23,9 @@ import { PensionComponent } from './pension/pension.component';
     LifeInsuranceComponent,
     HealthInsuranceComponent,
     TravelInsuranceComponent,
-    PensionComponent]
+    PensionComponent,
+    ConstructionInsuranceComponent,
+    MortgageInsuranceComponent]
 })
 export class InsuranceModule {
 }

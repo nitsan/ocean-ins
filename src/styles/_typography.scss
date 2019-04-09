@@ -13,6 +13,9 @@ p {
 ul.circle {
   list-style: circle;
   padding: 0 0 0 35px;
+  li {
+    line-height: 24px;
+  }
   li > ul, li > ol {
     margin: 0 35px 0 0;
   }
