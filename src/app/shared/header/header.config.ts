@@ -8,7 +8,7 @@ export const headerConfig = {
   pages: [
     {
       display: 'בית',
-      url: '/home'
+      url: '/'
     },
     {
       display: 'אודות',

@@ -29,12 +29,16 @@
           <div class="menu-primary-container">
             <ul id="menu-primary" class="menu nav-menu">
 
-              <li *ngFor="let item of menuItems" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home page_item page-item-7 menu-item-9">
-                <a *ngIf="item.url" routerLink="{{item.url}}" routerLinkActive="active" (click)="toggleMenu()">{{ item.display }}</a>
-                <a *ngIf="!item.url" (click)="item.isOpen = !item.isOpen">{{ item.display }} <i class="fas fa-sort-down"></i></a>
-                <ul class="sub-menu" *ngIf="item.children"  [ngClass]="{'hide-me': !item.isOpen}">
+              <li *ngFor="let item of menuItems"
+                  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home page_item page-item-7 menu-item-9">
+                <a *ngIf="item.url" routerLink="{{item.url}}" routerLinkActive="active"
+                   [routerLinkActiveOptions]="{ exact: true }" (click)="toggleMenu()">{{ item.display }}</a>
+                <a *ngIf="!item.url" (click)="item.isOpen = !item.isOpen">{{ item.display }} <i
+                  class="fas fa-sort-down"></i></a>
+                <ul class="sub-menu" *ngIf="item.children" [ngClass]="{'hide-me': !item.isOpen}">
                   <li *ngFor="let subItem of item.children">
-                    <a routerLink="{{subItem.url}}" routerLinkActive="active" (click)="toggleMenu()">{{ subItem.display }}</a></li>
+                    <a routerLink="{{subItem.url}}" routerLinkActive="active"
+                       (click)="toggleMenu()">{{ subItem.display }}</a></li>
                 </ul>
               </li>
             </ul>

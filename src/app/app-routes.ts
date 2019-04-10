@@ -21,7 +21,7 @@ import { MortgageInsuranceComponent } from './insurance/mortgage-insurance/mortg
 
 const appRoutes: Routes = [
   {
-    path: 'home', component: HomeComponent,
+    path: '', component: HomeComponent,
   },
   {
     path: 'about', component: AboutComponent
@@ -52,9 +52,6 @@ const appRoutes: Routes = [
   },
   {
     path: 'contact-us', component: ContactUsComponent
-  },
-  {
-    path: '', redirectTo: 'home', pathMatch: 'full'
   },
   {
     path: '**', component: NotFoundComponent
