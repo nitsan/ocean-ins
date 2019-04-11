@@ -67,6 +67,7 @@ input[type="text"] {
 }
 
 .page-title {
+  z-index: 1;
   color: $dark-grey2;
   background-color: $light-green;
   padding: 18px 10% 18px 18px;
