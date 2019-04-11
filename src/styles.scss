@@ -6,6 +6,7 @@
 @import "styles/colors";
 @import "styles/fonts";
 @import "styles/typography";
+@import "styles/mixins";
 
 .hebrew {
   direction: rtl;
@@ -70,8 +71,10 @@ input[type="text"] {
   background-color: $light-green;
   padding: 18px 10% 18px 18px;
   margin-bottom: 30px;
-  position: sticky;
   top: 127px;
+  @include desktop {
+    position: sticky;
+  }
 }
 
 section.container {
