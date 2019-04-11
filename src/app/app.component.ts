@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UserAuthService } from './core/services/user-auth.service';
 
 @Component({
   selector: 'oi-app-root',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'app';
+  constructor(userAuthService: UserAuthService) {
+    userAuthService.setUserId();
+  }
 }
