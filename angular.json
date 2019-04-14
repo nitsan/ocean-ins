@@ -19,6 +19,7 @@
             "polyfills": "src/polyfills.ts",
             "assets": [
               "src/assets",
+              "src/robots.txt",
               "src/favicon.ico"
             ],
             "styles": [
