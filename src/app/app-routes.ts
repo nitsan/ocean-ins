@@ -11,7 +11,6 @@ import {HealthInsuranceComponent} from './insurance/health-insurance/health-insu
 import {PensionComponent} from './insurance/pension/pension.component';
 import {TravelInsuranceComponent} from './insurance/travel-insurance/travel-insurance.component';
 import {NotFoundComponent} from './shared/not-found/not-found.component';
-import {HomeComponent} from './home/home.component';
 import {PriceOfferCarComponent} from './price-offers/price-offer-car/price-offer-car.component';
 import {PriceOfferHouseComponent} from './price-offers/price-offer-house/price-offer-house.component';
 import {PriceOfferMortgageComponent} from './price-offers/price-offer-mortgage/price-offer-mortgage.component';
@@ -21,7 +20,8 @@ import { MortgageInsuranceComponent } from './insurance/mortgage-insurance/mortg
 
 const appRoutes: Routes = [
   {
-    path: '', component: HomeComponent,
+    path: '',
+    loadChildren: './home/home.module#HomeModule'
   },
   {
     path: 'about', component: AboutComponent

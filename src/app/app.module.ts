@@ -11,7 +11,6 @@ import { InsuranceModule } from './insurance/insurance.module';
 import { PriceOffersModule } from './price-offers/price-offers.module';
 import { PersonalInfoModule } from './personal-info/personal-info.module';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HomeModule } from './home/home.module';
 import { SentryErrorHandler } from './core/services/sentry-error-handler';
 import { CookieService } from 'ngx-cookie-service';
 
@@ -25,7 +24,6 @@ import { CookieService } from 'ngx-cookie-service';
     BrowserAnimationsModule,
     SharedModule,
     AppRoutingModule,
-    HomeModule,
     AboutModule,
     ContactUsModule,
     InsuranceModule,
