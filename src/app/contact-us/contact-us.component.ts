@@ -3,6 +3,7 @@ import {EmailsService} from '../shared/emails/emails.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {FieldData, formFieldsData} from '../core/config/form-fields.data';
 import {FormValidationService} from '../core/services/form-validation.service';
+import { GtmService } from '../core/services/gtm.service';
 
 @Component({
   selector: 'oi-contact-us',
@@ -15,7 +16,8 @@ export class ContactUsComponent {
   public showSentMessage: boolean;
   public formFieldsData = formFieldsData;
 
-  constructor(private fb: FormBuilder, private emailsService: EmailsService, private formValidationService: FormValidationService) {
+  constructor(private fb: FormBuilder, private emailsService: EmailsService, private formValidationService: FormValidationService,
+              private gtmService: GtmService) {
     this.isLoading = false;
     this.showSentMessage = false;
     this.contactUsForm = this.fb.group({
@@ -53,6 +55,7 @@ export class ContactUsComponent {
   }
 
   onSendClick() {
+    this.gtmService.sendEvent('contact-us', 'click-send', this.contactUsForm.valid.toString());
     if (this.contactUsForm.valid) {
       this.isLoading = true;
       return this.emailsService.sendEmail(this.contactUsForm.value, 'ocean-contact-us')
