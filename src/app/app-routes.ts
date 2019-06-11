@@ -21,7 +21,7 @@ import { MortgageInsuranceComponent } from './insurance/mortgage-insurance/mortg
 const appRoutes: Routes = [
   {
     path: '',
-    loadChildren: './home/home.module#HomeModule'
+    loadChildren: () => import('./home/home.module').then(m => m.HomeModule)
   },
   {
     path: 'about', component: AboutComponent

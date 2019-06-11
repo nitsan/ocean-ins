@@ -3,7 +3,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {carTypes} from './cars-types.data';
 import {Observable} from 'rxjs/internal/Observable';
 import {map, startWith} from 'rxjs/operators';
-import {MatStepper} from '@angular/material';
+import { MatStepper } from '@angular/material/stepper';
 import {FormValidationService} from '../../core/services/form-validation.service';
 import {FieldData, formFieldsData} from '../../core/config/form-fields.data';
 

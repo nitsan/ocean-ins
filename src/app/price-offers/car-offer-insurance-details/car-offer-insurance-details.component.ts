@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {MatStepper} from '@angular/material';
+import { MatStepper } from '@angular/material/stepper';
 import {FieldData, formFieldsData} from '../../core/config/form-fields.data';
 import {FormValidationService} from '../../core/services/form-validation.service';
 

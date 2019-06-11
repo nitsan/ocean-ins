@@ -4,14 +4,12 @@ import {PriceOfferCarComponent} from './price-offer-car/price-offer-car.componen
 import {PriceOfferHouseComponent} from './price-offer-house/price-offer-house.component';
 import {PriceOfferMortgageComponent} from './price-offer-mortgage/price-offer-mortgage.component';
 import {ReactiveFormsModule} from '@angular/forms';
-import {
-  MatAutocompleteModule,
-  MatDatepickerModule,
-  MatInputModule,
-  MatNativeDateModule,
-  MatSelectModule,
-  MatStepperModule
-} from '@angular/material';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatStepperModule } from '@angular/material/stepper';
 import {CarOfferPersonalComponent} from './car-offer-personal/car-offer-personal.component';
 import {CarOfferCarDetailsComponent} from './car-offer-car-details/car-offer-car-details.component';
 import {CarOfferInsuranceDetailsComponent} from './car-offer-insurance-details/car-offer-insurance-details.component';

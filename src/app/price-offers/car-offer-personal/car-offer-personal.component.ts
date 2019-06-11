@@ -1,6 +1,7 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {DateAdapter, MatStepper} from '@angular/material';
+import { DateAdapter } from '@angular/material/core';
+import { MatStepper } from '@angular/material/stepper';
 import {PriceOffersService} from '../services/price-offers.service';
 import {FormValidationService} from '../../core/services/form-validation.service';
 import {FieldData, formFieldsData} from '../../core/config/form-fields.data';
