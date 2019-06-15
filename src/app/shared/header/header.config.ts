@@ -1,10 +1,16 @@
-export interface IPage {
+export interface Page {
   display: string;
   url?: string;
-  children?: IPage[];
+  children?: Page[];
+  title?: string;
+  description?: string;
 }
 
 export const headerConfig = {
+  defaults: {
+    title: 'אושן סוכנות לביטוח',
+    description: 'אושן סוכנות לביטוח - צוות משפחתי, מיומן ומקצועי אשר נותן פתרון לכל סוגי הביטוח ודואג לטיפול מסור במקרה של תביעה',
+  },
   pages: [
     {
       display: 'בית',
@@ -12,30 +18,38 @@ export const headerConfig = {
     },
     {
       display: 'אודות',
-      url: '/about'
+      url: '/about',
+      title: 'אודות'
     }, {
       display: 'ביטוחים',
       children: [
         {
           display: 'רכב',
+          title: 'ביטוח רכב',
           url: '/insurance/car'
         }, {
           display: 'דירה',
+          title: 'ביטוח דירה',
           url: '/insurance/house'
         }, {
           display: 'משכנתא',
+          title: 'ביטוח משכנתא',
           url: '/insurance/mortgage'
         }, {
           display: 'נסיעות לחו"ל',
+          title: 'ביטוח נסיעות לחו"ל',
           url: '/insurance/travel'
         }, {
           display: 'בריאות וסיעוד',
+          title: 'ביטוח בריאות וסיעוד',
           url: '/insurance/health'
         }, {
           display: 'עסק',
+          title: 'ביטוח עסק',
           url: '/insurance/business'
         }, {
           display: 'בניה וקבלנים',
+          title: 'ביטוח בניה וקבלנים',
           url: '/insurance/construction'
         // }, {
         //   display: 'ביטוח חיים',
@@ -84,6 +98,7 @@ export const headerConfig = {
       //   ]
     }, {
       display: 'צור קשר',
+      title: 'צור קשר',
       url: '/contact-us'
     }
   ]

@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {headerConfig, IPage} from './header.config';
+import {headerConfig, Page} from './header.config';
 import {UserAgentService} from '../../core/services/user-agent.service';
 
 @Component({
@@ -8,7 +8,7 @@ import {UserAgentService} from '../../core/services/user-agent.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  public menuItems: IPage[];
+  public menuItems: Page[];
   public isMenuOpen: boolean;
   private readonly isMobile: boolean;
 
