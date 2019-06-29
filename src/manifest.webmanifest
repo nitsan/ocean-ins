@@ -1,8 +1,8 @@
 {
-  "name": "ocean-ins",
-  "short_name": "ocean-ins",
-  "theme_color": "#257a87",
-  "background_color": "#fafafa",
+  "name": "אושן סוכנות לביטוח",
+  "short_name": "אושן ביטוח",
+  "theme_color": "#ffffff",
+  "background_color": "#257a87",
   "display": "standalone",
   "scope": "/",
   "start_url": "/",
