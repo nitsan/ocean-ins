@@ -13,6 +13,8 @@ import { PersonalInfoModule } from './personal-info/personal-info.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SentryErrorHandler } from './core/services/sentry-error-handler';
 import { CookieService } from 'ngx-cookie-service';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 
 @NgModule({
@@ -22,6 +24,7 @@ import { CookieService } from 'ngx-cookie-service';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     SharedModule,
     AppRoutingModule,
     AboutModule,
