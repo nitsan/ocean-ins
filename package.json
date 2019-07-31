@@ -4,6 +4,7 @@
   "license": "MIT",
   "scripts": {
     "bundle-report": "webpack-bundle-analyzer dist/stats.json",
+    "npm-check": "npm-check -u",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
     "ng": "ng",
@@ -61,7 +62,6 @@
     "karma-jasmine": "^2.0.1",
     "karma-jasmine-html-reporter": "^1.4.2",
     "morgan": "^1.9.1",
-    "npm-check": "^5.9.0",
     "path": "^0.12.7",
     "protractor": "^5.4.1",
     "ts-node": "^7.0.0",
