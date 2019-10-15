@@ -1,35 +1,59 @@
-<form class="column-form" [formGroup]="insuranceInfoForm">
+<form class="column-form" [formGroup]="insuranceInfoForm" (ngSubmit)="saveForm()">
   <mat-form-field>
     <mat-select placeholder="{{priceOffersData.type.display}}" formControlName="type">
       <mat-option value="חובה ומקיף">חובה ומקיף</mat-option>
       <mat-option value="חובה וג">חובה וצד ג'</mat-option>
     </mat-select>
+    <mat-error
+      *ngIf="insuranceInfoForm.get(priceOffersData.type.key).invalid">{{ getErrorMessage(priceOffersData.type) }}</mat-error>
   </mat-form-field>
   <mat-form-field>
-    <input matInput placeholder="{{priceOffersData.youngestDriver.display}}" type="number" formControlName="youngestDriver">
-    <mat-error *ngIf="insuranceInfoForm.get(priceOffersData.youngestDriver.key).invalid">{{ getErrorMessage(priceOffersData.youngestDriver) }}</mat-error>
+    <mat-select placeholder="{{priceOffersData.youngestDriver.display}}" formControlName="youngestDriver">
+      <mat-option value="17-21">17-21</mat-option>
+      <mat-option value="21-24">21-24</mat-option>
+      <mat-option value="24-30">24-30</mat-option>
+      <mat-option value="30-35">30-35</mat-option>
+      <mat-option value="35-40">35-40</mat-option>
+      <mat-option value="40-50">40-50</mat-option>
+      <mat-option value="מעל 50">מעל 50</mat-option>
+    </mat-select>
+    <mat-error
+      *ngIf="insuranceInfoForm.get(priceOffersData.youngestDriver.key).invalid">{{ getErrorMessage(priceOffersData.youngestDriver) }}</mat-error>
   </mat-form-field>
   <mat-form-field>
-    <input matInput placeholder="{{priceOffersData.youngestDriverExperience.display}}" type="number" formControlName="youngestDriverExperience">
-    <mat-error *ngIf="insuranceInfoForm.get(priceOffersData.youngestDriverExperience.key).invalid">{{ getErrorMessage(priceOffersData.youngestDriverExperience) }}</mat-error>
+    <mat-select placeholder="{{priceOffersData.youngestDriverExperience.display}}" formControlName="youngestDriverExperience">
+      <mat-option value="מתחת לשנה">מתחת לשנה</mat-option>
+      <mat-option value="מעל שנה">מעל שנה</mat-option>
+    </mat-select>
+    <mat-error
+      *ngIf="insuranceInfoForm.get(priceOffersData.youngestDriverExperience.key).invalid">{{ getErrorMessage(priceOffersData.youngestDriverExperience) }}</mat-error>
   </mat-form-field>
   <mat-form-field>
-    <input matInput placeholder="{{priceOffersData.numberOfDrivers.display}}" type="number" formControlName="numberOfDrivers">
-    <mat-error *ngIf="insuranceInfoForm.get(priceOffersData.numberOfDrivers.key).invalid">{{ getErrorMessage(priceOffersData.numberOfDrivers) }}</mat-error>
+    <mat-select placeholder="{{priceOffersData.numberOfDrivers.display}}" formControlName="numberOfDrivers">
+      <mat-option value="יחיד">יחיד</mat-option>
+      <mat-option value="2 נהגים">2 נהגים</mat-option>
+      <mat-option value="כל נהג">כל נהג</mat-option>
+    </mat-select>
+    <mat-error
+      *ngIf="insuranceInfoForm.get(priceOffersData.numberOfDrivers.key).invalid">{{ getErrorMessage(priceOffersData.numberOfDrivers) }}</mat-error>
   </mat-form-field>
   <mat-form-field>
-    <input matInput placeholder="{{priceOffersData.hasPastClaims.display}}" type="text" formControlName="hasPastClaims">
-    <mat-error *ngIf="insuranceInfoForm.get(priceOffersData.hasPastClaims.key).invalid">{{ getErrorMessage(priceOffersData.hasPastClaims) }}</mat-error>
+    <mat-select placeholder="{{priceOffersData.hasPastClaims.display}}" formControlName="hasPastClaims">
+      <mat-option value="3 שנים ללא תביעות">3 שנים ללא תביעות</mat-option>
+      <mat-option value="3 שנים עם תביעות">3 שנים עם תביעות</mat-option>
+    </mat-select>
+    <mat-error
+      *ngIf="insuranceInfoForm.get(priceOffersData.hasPastClaims.key).invalid">{{ getErrorMessage(priceOffersData.hasPastClaims) }}</mat-error>
   </mat-form-field>
-  <mat-form-field>
+  <mat-form-field *ngIf="hasPastClaims.value === 'כן'">
     <input matInput placeholder="{{priceOffersData.claims.display}}" type="text" formControlName="claims">
-    <mat-error *ngIf="insuranceInfoForm.get(priceOffersData.claims.key).invalid">{{ getErrorMessage(priceOffersData.claims) }}</mat-error>
+    <mat-error
+      *ngIf="insuranceInfoForm.get(priceOffersData.claims.key).invalid">{{ getErrorMessage(priceOffersData.claims) }}</mat-error>
   </mat-form-field>
   <mat-form-field>
     <textarea matInput placeholder="{{priceOffersData.comment.display}}" formControlName="comment"></textarea>
-    <mat-error *ngIf="insuranceInfoForm.get(priceOffersData.comment.key).invalid">{{ getErrorMessage(priceOffersData.comment) }}</mat-error>
+    <mat-error
+      *ngIf="insuranceInfoForm.get(priceOffersData.comment.key).invalid">{{ getErrorMessage(priceOffersData.comment) }}</mat-error>
   </mat-form-field>
+  <oi-button type="submit" [isLoading]="isLoading" label="קבלו הצעת מחיר"></oi-button>
 </form>
-<!--<button mat-button matStepperPrevious>חזור</button>-->
-<!--<button mat-button (click)="saveForm()">שלח</button>-->
-<oi-button (buttonClick)="saveForm()" [isLoading]="isLoading"></oi-button>

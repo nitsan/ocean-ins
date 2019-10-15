@@ -67,13 +67,14 @@ export const headerConfig = {
       //   children: [
       //     {
       //       display: 'ביטוח רכב',
+      //       title: 'הצעת מחיר לרכב',
       //       url: '/price-offers/car'
-      //     }, {
-      //       display: 'ביטוח דירה',
-      //       url: '/price-offers/house'
-      //     }, {
-      //       display: 'ביטוח משכנתא',
-      //       url: '/price-offers/mortgage'
+      //     // }, {
+      //     //   display: 'ביטוח דירה',
+      //     //   url: '/price-offers/house'
+      //     // }, {
+      //     //   display: 'ביטוח משכנתא',
+      //     //   url: '/price-offers/mortgage'
       //     },
       //   ]
       // }, {

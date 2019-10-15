@@ -6,13 +6,15 @@ import {FieldData} from '../config/form-fields.data';
   providedIn: 'root'
 })
 export class FormValidationService {
-  private errors: any;
+  private readonly errors: any;
 
   constructor() {
     this.errors = {
       required: 'שדה חובה',
       minlength: 'התוכן קצר מידי',
       maxlength: 'התוכן ארוך מידי',
+      min: 'הערך נמוך מידי',
+      max: 'הערך גבוה מידי',
       email: 'יש להכניס מייל חוקי'
     };
   }

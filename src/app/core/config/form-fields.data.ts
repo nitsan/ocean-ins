@@ -49,7 +49,7 @@ export const formFieldsData = {
   },
   manufacturer: {
     key: 'manufacturer',
-    display: 'צרן הרכב',
+    display: 'יצרן הרכב',
   },
   model: {
     key: 'model',
@@ -81,7 +81,7 @@ export const formFieldsData = {
   },
   hasPastClaims: {
     key: 'hasPastClaims',
-    display: 'תביעות ב3 שנים האחרונות',
+    display: 'עבר ביטוחי',
   },
   claims: {
     key: 'claims',
