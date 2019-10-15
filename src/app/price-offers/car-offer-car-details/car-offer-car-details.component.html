@@ -1,7 +1,7 @@
 <form class="column-form" [formGroup]="carInfoForm" (ngSubmit)="saveForm()">
   <mat-form-field>
     <mat-select placeholder="{{priceOffersData.licenceIssuing.display}}" formControlName="licenceIssuing">
-      <mat-option *ngFor="let year of yearOptions" [value]="year">{{year}}</mat-option>
+      <mat-option *ngFor="let year of yearOptions" [value]="year">{{ year }}</mat-option>
     </mat-select>
     <mat-error
       *ngIf="carInfoForm.get(priceOffersData.licenceIssuing.key).invalid">{{ getErrorMessage(priceOffersData.licenceIssuing) }}</mat-error>
@@ -28,7 +28,7 @@
   </mat-form-field>
   <mat-form-field>
     <mat-select placeholder="{{priceOffersData.manufactureYear.display}}" formControlName="manufactureYear">
-      <mat-option *ngFor="let year of yearOptions" [value]="year">{{year}}</mat-option>
+      <mat-option *ngFor="let year of yearOptions" [value]="year">{{ year }}</mat-option>
     </mat-select>
     <mat-error
       *ngIf="carInfoForm.get(priceOffersData.manufactureYear.key).invalid">{{ getErrorMessage(priceOffersData.manufactureYear) }}</mat-error>
