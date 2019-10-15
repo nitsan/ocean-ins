@@ -1,4 +1,4 @@
-<form class="column-form" [formGroup]="personalInfoForm">
+<form class="column-form" [formGroup]="personalInfoForm" (ngSubmit)="saveForm()">
   <mat-form-field>
     <input matInput placeholder="{{priceOffersData.firstName.display}}" type="text" formControlName="firstName"
            name="firstName">
@@ -18,12 +18,12 @@
     <mat-hint>כולל ספרת ביקורת</mat-hint>
   </mat-form-field>
   <mat-form-field>
-    <input matInput [max]="maxDate" [matDatepicker]="picker" placeholder="{{priceOffersData.birthday.display}}"
-           formControlName="birthday" name="birthday" disabled>
+    <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker" placeholder="{{priceOffersData.birthday.display}}"
+           formControlName="birthday" name="birthday">
     <mat-error
       *ngIf="personalInfoForm.get(priceOffersData.birthday.key).invalid">{{ getErrorMessage(priceOffersData.birthday) }}</mat-error>
     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-    <mat-datepicker #picker disabled="false"></mat-datepicker>
+    <mat-datepicker #picker disabled="false" startView="multi-year"></mat-datepicker>
   </mat-form-field>
   <mat-form-field>
     <input matInput placeholder="{{priceOffersData.phone.display}}" type="tel" formControlName="phone" name="phone">
@@ -35,5 +35,6 @@
     <mat-error
       *ngIf="personalInfoForm.get(priceOffersData.email.key).invalid">{{ getErrorMessage(priceOffersData.email) }}</mat-error>
   </mat-form-field>
+
+  <button class="mt-10" type="submit" mat-button>הבא</button>
 </form>
-<button mat-button (click)="saveForm()">הבא</button>

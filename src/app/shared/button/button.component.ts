@@ -7,10 +7,14 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
 })
 export class ButtonComponent {
   @Output() buttonClick: EventEmitter<any>;
+  @Input() type: string;
   @Input() isLoading: boolean;
+  @Input() label: string;
 
   constructor() {
+    this.type = 'button';
     this.isLoading = false;
+    this.label = 'שלח';
     this.buttonClick = new EventEmitter();
   }
 

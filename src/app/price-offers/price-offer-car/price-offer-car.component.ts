@@ -1,6 +1,10 @@
-import {Component, OnInit} from '@angular/core';
-import {PriceOffersService} from '../services/price-offers.service';
-import {PriceOffer} from '../models/price-offer.enum';
+import { Component, OnInit } from '@angular/core';
+import { PriceOffersService } from '../services/price-offers.service';
+import { PriceOffer } from '../models/price-offer.enum';
+import { SessionStorageService } from '../../core/services/session-storage.service';
+import { priceOfferConfig } from '../price-offers.config';
+import { environment } from '../../../environments/environment';
+import { GtmService } from '../../core/services/gtm.service';
 
 @Component({
   selector: 'oi-price-offer-car',
@@ -11,7 +15,7 @@ export class PriceOfferCarComponent implements OnInit {
   public isLoading: boolean;
   public showSuccessMessage: boolean;
 
-  constructor(private priceOffersService: PriceOffersService) {
+  constructor(private priceOffersService: PriceOffersService, private gtmService: GtmService) {
     this.isLoading = false;
     this.showSuccessMessage = false;
   }
@@ -19,15 +23,19 @@ export class PriceOfferCarComponent implements OnInit {
   ngOnInit() {
   }
 
-  saveForm([formData, isLast = false]) {
+  saveForm([formData, formStorageKey, isLast = false]) {
+    SessionStorageService.saveToSessionStorage(formStorageKey, formData);
+    this.gtmService.sendEvent('price-offer', 'finish-car-step', formStorageKey);
     this.priceOffersService.addFormData(formData);
-    console.log('isLast: ', isLast);
     if (isLast) {
       this.isLoading = true;
       this.priceOffersService.sendOfferEmail(PriceOffer.CAR)
         .then(() => {
           this.isLoading = false;
           this.showSuccessMessage = true;
+          if (environment.production) {
+            SessionStorageService.removeKeys(Object.keys(priceOfferConfig.carFormKeys));
+          }
         });
     }
   }

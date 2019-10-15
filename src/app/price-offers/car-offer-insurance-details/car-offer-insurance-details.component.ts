@@ -1,8 +1,10 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatStepper } from '@angular/material/stepper';
-import {FieldData, formFieldsData} from '../../core/config/form-fields.data';
-import {FormValidationService} from '../../core/services/form-validation.service';
+import { FieldData, formFieldsData } from '../../core/config/form-fields.data';
+import { FormValidationService } from '../../core/services/form-validation.service';
+import { PriceOffersService } from '../services/price-offers.service';
+import { priceOfferConfig } from '../price-offers.config';
 
 @Component({
   selector: 'oi-car-offer-insurance-details',
@@ -12,33 +14,36 @@ import {FormValidationService} from '../../core/services/form-validation.service
 export class CarOfferInsuranceDetailsComponent implements OnInit {
   @Input() isLoading: boolean;
   @Output() nextClicked = new EventEmitter<any>();
+  private readonly formStorageKey = priceOfferConfig.carFormKeys.insuranceInfoForm;
   public insuranceInfoForm: FormGroup;
   public priceOffersData = formFieldsData;
 
+  get hasPastClaims(): AbstractControl {
+    return this.insuranceInfoForm.get('hasPastClaims');
+  }
+
   constructor(private fb: FormBuilder, private stepper: MatStepper, private formValidationService: FormValidationService) {
     this.insuranceInfoForm = this.fb.group({
-      type: [''],
-      youngestDriver: [''],
-      youngestDriverExperience: [''],
-      numberOfDrivers: [''],
-      hasPastClaims: [''],
-      claims: [''],
-      comment: ['', Validators.maxLength(256)]
+      type: ['', Validators.required],
+      youngestDriver: ['', Validators.required],
+      youngestDriverExperience: ['', Validators.required],
+      numberOfDrivers: ['', Validators.required],
+      hasPastClaims: ['', Validators.required],
+      comment: ['', [Validators.minLength(2), Validators.maxLength(256)]]
     });
   }
 
   ngOnInit() {
+    this.insuranceInfoForm.enable();
+    PriceOffersService.loadFormData(this.formStorageKey, this.insuranceInfoForm);
   }
 
-
   saveForm() {
-    // if (this.personalInfoForm.valid) {
-    //   console.log('valid!');
-    this.nextClicked.emit([this.insuranceInfoForm.value, true]);
-    this.stepper.next();
-    // } else {
-    //   console.log('not valid!');
-    // }
+    if (this.insuranceInfoForm.valid) {
+      this.nextClicked.emit([this.insuranceInfoForm.value, this.formStorageKey, true]);
+      this.stepper.next();
+      this.insuranceInfoForm.disable();
+    }
   }
 
   getErrorMessage(fieldData: FieldData): string {

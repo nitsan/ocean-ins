@@ -1,10 +1,11 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DateAdapter } from '@angular/material/core';
 import { MatStepper } from '@angular/material/stepper';
-import {PriceOffersService} from '../services/price-offers.service';
-import {FormValidationService} from '../../core/services/form-validation.service';
-import {FieldData, formFieldsData} from '../../core/config/form-fields.data';
+import { PriceOffersService } from '../services/price-offers.service';
+import { FormValidationService } from '../../core/services/form-validation.service';
+import { FieldData, formFieldsData } from '../../core/config/form-fields.data';
+import { priceOfferConfig } from '../price-offers.config';
 
 @Component({
   selector: 'oi-car-offer-personal',
@@ -13,7 +14,9 @@ import {FieldData, formFieldsData} from '../../core/config/form-fields.data';
 })
 export class CarOfferPersonalComponent implements OnInit {
   @Output() nextClicked = new EventEmitter<any>();
+  private readonly formStorageKey = priceOfferConfig.carFormKeys.personalInfoForm;
   public personalInfoForm: FormGroup;
+  public minDate: Date;
   public maxDate: Date;
   public priceOffersData = formFieldsData;
 
@@ -23,18 +26,20 @@ export class CarOfferPersonalComponent implements OnInit {
     this.personalInfoForm = this.fb.group({
       firstName: ['', [Validators.required, Validators.minLength(2)]],
       lastName: ['', [Validators.required, Validators.minLength(2)]],
-      id: ['', [Validators.required, Validators.maxLength(9)]],
+      id: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(9)]],
       birthday: ['', [Validators.required]],
       phone: ['', [Validators.required, Validators.minLength(10)]],
-      email: ['', Validators.email],
+      email: ['', [Validators.required, Validators.email]],
     });
   }
 
   ngOnInit() {
+    PriceOffersService.loadFormData(this.formStorageKey, this.personalInfoForm);
   }
 
   initDates() {
     this.adapter.setLocale('he');
+    this.minDate = new Date(new Date().getFullYear() - 99, 0, 1);
     this.maxDate = new Date(new Date().getFullYear() - 16, 0, 1);
   }
 
@@ -44,12 +49,8 @@ export class CarOfferPersonalComponent implements OnInit {
 
   saveForm() {
     if (this.personalInfoForm.valid) {
-      //   console.log('valid!');
-      this.nextClicked.emit([this.personalInfoForm.value]);
+      this.nextClicked.emit([this.personalInfoForm.value, this.formStorageKey]);
       this.stepper.next();
-    } else {
-      // this.personalInfoForm.
-      //   console.log('not valid!');
     }
   }
 }

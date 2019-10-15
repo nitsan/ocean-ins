@@ -1,0 +1,11 @@
+.alert {
+  padding: 1em 3em;
+  margin: 0 0 2em;
+  position: relative;
+  background-color: $light-green;
+  color: #fff;
+  border-radius: 5px;
+  &.alert-success {
+    background-color: $success;
+  }
+}
