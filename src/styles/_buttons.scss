@@ -1,0 +1,14 @@
+button {
+  background-color: $green;
+  border-color: $green;
+
+  &:hover {
+    background-color: $green;
+  }
+
+  &:active {
+    background-color: $light-green;
+    border-color: $light-green;
+    outline-color: $light-green;
+  }
+}

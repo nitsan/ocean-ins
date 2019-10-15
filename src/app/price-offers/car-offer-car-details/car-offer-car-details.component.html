@@ -1,17 +1,20 @@
-<form class="column-form" [formGroup]="carInfoForm">
+<form class="column-form" [formGroup]="carInfoForm" (ngSubmit)="saveForm()">
   <mat-form-field>
-    <input matInput [matDatepicker]="issuingPicker" placeholder="{{priceOffersData.licenceIssuing.display}}" formControlName="licenceIssuing">
-    <mat-error *ngIf="carInfoForm.get(priceOffersData.licenceIssuing.key).invalid">{{ getErrorMessage(priceOffersData.licenceIssuing) }}</mat-error>
-    <mat-datepicker-toggle matSuffix [for]="issuingPicker"></mat-datepicker-toggle>
-    <mat-datepicker #issuingPicker></mat-datepicker>
+    <mat-select placeholder="{{priceOffersData.licenceIssuing.display}}" formControlName="licenceIssuing">
+      <mat-option *ngFor="let year of yearOptions" [value]="year">{{year}}</mat-option>
+    </mat-select>
+    <mat-error
+      *ngIf="carInfoForm.get(priceOffersData.licenceIssuing.key).invalid">{{ getErrorMessage(priceOffersData.licenceIssuing) }}</mat-error>
   </mat-form-field>
   <mat-form-field>
     <input matInput placeholder="{{priceOffersData.licenseNumber.display}}" type="text" formControlName="licenseNumber">
-    <mat-error *ngIf="carInfoForm.get(priceOffersData.licenseNumber.key).invalid">{{ getErrorMessage(priceOffersData.licenseNumber) }}</mat-error>
+    <mat-error
+      *ngIf="carInfoForm.get(priceOffersData.licenseNumber.key).invalid">{{ getErrorMessage(priceOffersData.licenseNumber) }}</mat-error>
   </mat-form-field>
   <mat-form-field>
     <input matInput placeholder="יצרן רכב" type="text" formControlName="manufacturer" [matAutocomplete]="auto">
-    <mat-error *ngIf="carInfoForm.get(priceOffersData.licenseNumber.key).invalid">{{ getErrorMessage(priceOffersData.licenseNumber) }}</mat-error>
+    <mat-error
+      *ngIf="carInfoForm.get(priceOffersData.manufacturer.key).invalid">{{ getErrorMessage(priceOffersData.manufacturer) }}</mat-error>
     <mat-autocomplete #auto="matAutocomplete">
       <mat-option *ngFor="let car of filteredOptions | async" [value]="car.type">
         {{ car.type }}
@@ -20,21 +23,21 @@
   </mat-form-field>
   <mat-form-field>
     <input matInput placeholder="{{priceOffersData.model.display}}" type="text" formControlName="model">
-    <mat-error *ngIf="carInfoForm.get(priceOffersData.model.key).invalid">{{ getErrorMessage(priceOffersData.model) }}</mat-error>
+    <mat-error
+      *ngIf="carInfoForm.get(priceOffersData.model.key).invalid">{{ getErrorMessage(priceOffersData.model) }}</mat-error>
   </mat-form-field>
   <mat-form-field>
-    <input matInput [matDatepicker]="dp" placeholder="{{priceOffersData.manufactureYear.display}}" formControlName="manufactureYear">
-    <mat-error *ngIf="carInfoForm.get(priceOffersData.manufactureYear.key).invalid">{{ getErrorMessage(priceOffersData.manufactureYear) }}</mat-error>
-    <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
-    <mat-datepicker #dp
-                    startView="multi-year"
-                    panelClass="example-month-picker">
-    </mat-datepicker>
+    <mat-select placeholder="{{priceOffersData.manufactureYear.display}}" formControlName="manufactureYear">
+      <mat-option *ngFor="let year of yearOptions" [value]="year">{{year}}</mat-option>
+    </mat-select>
+    <mat-error
+      *ngIf="carInfoForm.get(priceOffersData.manufactureYear.key).invalid">{{ getErrorMessage(priceOffersData.manufactureYear) }}</mat-error>
   </mat-form-field>
   <mat-form-field>
-    <input matInput placeholder="{{priceOffersData.engineCapacity.display}}" type="number" formControlName="engineCapacity">
-    <mat-error *ngIf="carInfoForm.get(priceOffersData.engineCapacity.key).invalid">{{ getErrorMessage(priceOffersData.engineCapacity) }}</mat-error>
+    <input matInput placeholder="{{priceOffersData.engineCapacity.display}}" type="number"
+           formControlName="engineCapacity">
+    <mat-error
+      *ngIf="carInfoForm.get(priceOffersData.engineCapacity.key).invalid">{{ getErrorMessage(priceOffersData.engineCapacity) }}</mat-error>
   </mat-form-field>
+  <button class="next-btn" type="submit" mat-button>הבא</button>
 </form>
-<!--<button mat-button matStepperPrevious>חזור</button>-->
-<button mat-button (click)="saveForm()">הבא</button>
