@@ -62,21 +62,21 @@ export const headerConfig = {
         //   url: '/insurance/pension-solutions'
         }
       ]
-      // }, {
-      //   display: 'הצעות מחיר',
-      //   children: [
-      //     {
-      //       display: 'ביטוח רכב',
-      //       title: 'הצעת מחיר לרכב',
-      //       url: '/price-offers/car'
-      //     // }, {
-      //     //   display: 'ביטוח דירה',
-      //     //   url: '/price-offers/house'
-      //     // }, {
-      //     //   display: 'ביטוח משכנתא',
-      //     //   url: '/price-offers/mortgage'
-      //     },
-      //   ]
+      }, {
+        display: 'הצעות מחיר',
+        children: [
+          {
+            display: 'ביטוח רכב',
+            title: 'הצעת מחיר לרכב',
+            url: '/price-offers/car'
+          // }, {
+          //   display: 'ביטוח דירה',
+          //   url: '/price-offers/house'
+          // }, {
+          //   display: 'ביטוח משכנתא',
+          //   url: '/price-offers/mortgage'
+          },
+        ]
       // }, {
       //   display: 'מידע אישי',
       //   children: [
