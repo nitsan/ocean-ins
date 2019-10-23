@@ -7,6 +7,7 @@
     "npm-check": "npm-check -u",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
+    "cypress:run-record": "cypress run --record --key b5d99423-5c49-4eb8-a850-fe7afd2a7d6c",
     "ng": "ng",
     "start": "ng serve",
     "server": "node server/server.js",
