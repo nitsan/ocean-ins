@@ -3,10 +3,18 @@ import { TestBed } from '@angular/core/testing';
 import { UserAgentService } from './user-agent.service';
 
 describe('UserAgentService', () => {
-  beforeEach(() => TestBed.configureTestingModule({}));
+  let service: UserAgentService;
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      providers: [
+        UserAgentService,
+      ]
+    });
+    service = TestBed.inject(UserAgentService);
+  });
 
   it('should be created', () => {
-    const service: UserAgentService = TestBed.get(UserAgentService);
     expect(service).toBeTruthy();
   });
 });
