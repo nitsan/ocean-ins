@@ -7,7 +7,7 @@ jobs:
   build:
     docker:
       # specify the version you desire here
-      - image: circleci/node:10.16-browsers
+      - image: circleci/node:12.18.3-browsers
 
     # Specify service dependencies here if necessary
     # CircleCI maintains a library of pre-built images
@@ -36,3 +36,7 @@ jobs:
       - run:
           name: Lint
           command: npm run lint
+
+      - run:
+          name: Test
+          command: npm run test
