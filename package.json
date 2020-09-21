@@ -13,7 +13,7 @@
     "build:prod": "ng build --prod",
     "build:stats": "ng build --stats-json",
     "test": "ng test",
-    "test:watch": "ng test --watch",
+    "test:watch": "ng test --watch --browsers=Chrome",
     "lint": "ng lint"
   },
   "private": true,
