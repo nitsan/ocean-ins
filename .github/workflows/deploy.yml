@@ -20,3 +20,4 @@ jobs:
           username: epiz_26855948
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./dist/
+          dry-run: true
