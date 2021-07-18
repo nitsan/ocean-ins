@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { PriceOffersService } from '../services/price-offers.service';
 import { PriceOffer } from '../models/price-offer.enum';
 import { SessionStorageService } from '../../core/services/session-storage.service';
@@ -11,16 +11,13 @@ import { GtmService } from '../../core/services/gtm.service';
   templateUrl: './price-offer-car.component.html',
   styleUrls: ['./price-offer-car.component.scss']
 })
-export class PriceOfferCarComponent implements OnInit {
+export class PriceOfferCarComponent {
   public isLoading: boolean;
   public showSuccessMessage: boolean;
 
   constructor(private priceOffersService: PriceOffersService, private gtmService: GtmService) {
     this.isLoading = false;
     this.showSuccessMessage = false;
-  }
-
-  ngOnInit() {
   }
 
   saveForm([formData, formStorageKey, isLast = false]) {

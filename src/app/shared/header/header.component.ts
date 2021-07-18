@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {headerConfig, Page} from './header.config';
 import {UserAgentService} from '../../core/services/user-agent.service';
 
@@ -7,7 +7,7 @@ import {UserAgentService} from '../../core/services/user-agent.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
   public menuItems: Page[];
   public isMenuOpen: boolean;
   private readonly isMobile: boolean;
@@ -16,10 +16,6 @@ export class HeaderComponent implements OnInit {
     this.menuItems = headerConfig.pages;
     this.isMenuOpen = false;
     this.isMobile = UserAgentService.isMobile();
-  }
-
-  ngOnInit() {
-
   }
 
   toggleMenu() {
