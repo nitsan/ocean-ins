@@ -1,4 +1,7 @@
-on: push
+on:
+  push:
+    branches:
+      - main
 name: 🚀 Deploy website on push
 jobs:
   web-deploy:
@@ -8,10 +11,11 @@ jobs:
       - name: 🚚 Get latest code
         uses: actions/checkout@v2
 
+      - name: ⌛ npm install
+        run: npm install
+
       - name: 🔨 Build Project
-        run: |
-          npm install
-          npm run build:prod
+        run: npm run build:prod
 
       - name: 📂 Sync files
         uses: SamKirkland/FTP-Deploy-Action@4.1.0
@@ -20,4 +24,3 @@ jobs:
           username: epiz_26855948
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./dist/
-          dry-run: true
