@@ -30,7 +30,7 @@
     "@angular/pwa": "^0.1001.2",
     "@angular/router": "^12.2.3",
     "@angular/service-worker": "^12.2.3",
-    "@sentry/browser": "^5.24.2",
+    "@sentry/browser": "^6.17.3",
     "bootstrap": "^4.5.2",
     "core-js": "^3.6.5",
     "emailjs-com": "^2.6.3",
