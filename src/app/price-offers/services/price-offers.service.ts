@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { EmailsService } from '../../shared/emails/emails.service';
 import { PriceOffer } from '../models/price-offer.enum';
 import { SessionStorageService } from '../../core/services/session-storage.service';
-import { FormGroup } from '@angular/forms';
+import { UntypedFormGroup } from '@angular/forms';
 
 @Injectable()
 export class PriceOffersService {
@@ -12,7 +12,7 @@ export class PriceOffersService {
     this.formData = {};
   }
 
-  public static loadFormData(formStorageKey: string, form: FormGroup) {
+  public static loadFormData(formStorageKey: string, form: UntypedFormGroup) {
     const formValue = SessionStorageService.LoadFromSessionStorage(formStorageKey);
     if (formValue) {
       form.setValue(formValue);
