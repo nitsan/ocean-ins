@@ -1,5 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { DateAdapter } from '@angular/material/core';
 import { MatStepper } from '@angular/material/stepper';
 import { PriceOffersService } from '../services/price-offers.service';
@@ -15,12 +15,12 @@ import { priceOfferConfig } from '../price-offers.config';
 export class CarOfferPersonalComponent implements OnInit {
   @Output() nextClicked = new EventEmitter<any>();
   private readonly formStorageKey = priceOfferConfig.carFormKeys.personalInfoForm;
-  public personalInfoForm: FormGroup;
+  public personalInfoForm: UntypedFormGroup;
   public minDate: Date;
   public maxDate: Date;
   public priceOffersData = formFieldsData;
 
-  constructor(private fb: FormBuilder, private adapter: DateAdapter<any>, private stepper: MatStepper,
+  constructor(private fb: UntypedFormBuilder, private adapter: DateAdapter<any>, private stepper: MatStepper,
               private priceOffersService: PriceOffersService, private formValidationService: FormValidationService) {
     this.initDates();
     this.personalInfoForm = this.fb.group({

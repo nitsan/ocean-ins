@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { MatStepper } from '@angular/material/stepper';
 import { FieldData, formFieldsData } from '../../core/config/form-fields.data';
 import { FormValidationService } from '../../core/services/form-validation.service';
@@ -15,14 +15,14 @@ export class CarOfferInsuranceDetailsComponent implements OnInit {
   @Input() isLoading: boolean;
   @Output() nextClicked = new EventEmitter<any>();
   private readonly formStorageKey = priceOfferConfig.carFormKeys.insuranceInfoForm;
-  public insuranceInfoForm: FormGroup;
+  public insuranceInfoForm: UntypedFormGroup;
   public priceOffersData = formFieldsData;
 
   get hasPastClaims(): AbstractControl {
     return this.insuranceInfoForm.get('hasPastClaims');
   }
 
-  constructor(private fb: FormBuilder, private stepper: MatStepper, private formValidationService: FormValidationService) {
+  constructor(private fb: UntypedFormBuilder, private stepper: MatStepper, private formValidationService: FormValidationService) {
     this.insuranceInfoForm = this.fb.group({
       type: ['', Validators.required],
       youngestDriver: ['', Validators.required],

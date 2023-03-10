@@ -1,5 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { carTypes } from './cars-types.data';
 import { Observable } from 'rxjs/internal/Observable';
 import { map, startWith } from 'rxjs/operators';
@@ -17,13 +17,13 @@ import { priceOfferConfig } from '../price-offers.config';
 export class CarOfferCarDetailsComponent implements OnInit {
   @Output() nextClicked = new EventEmitter<any>();
   private readonly formStorageKey = priceOfferConfig.carFormKeys.carInfoForm;
-  public carInfoForm: FormGroup;
+  public carInfoForm: UntypedFormGroup;
   public carTypes: Array<{ type: string }>;
   public filteredOptions: Observable<any[]>;
   public priceOffersData = formFieldsData;
   public yearOptions: Array<number>;
 
-  constructor(private fb: FormBuilder, private stepper: MatStepper, private formValidationService: FormValidationService) {
+  constructor(private fb: UntypedFormBuilder, private stepper: MatStepper, private formValidationService: FormValidationService) {
     this.yearOptions = PriceOffersService.buildYearsOptions();
     this.carTypes = carTypes;
     this.carInfoForm = this.fb.group({

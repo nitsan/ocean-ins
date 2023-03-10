@@ -112,11 +112,9 @@
       }
     }
   },
-  "defaultProject": "ocean-ins",
   "schematics": {
     "@schematics/angular:component": {
-      "prefix": "oi",
-      "styleext": "scss"
+      "prefix": "oi"
     },
     "@schematics/angular:directive": {
       "prefix": "oi"
@@ -129,6 +127,8 @@
   },
   "cli": {
     "analytics": false,
-    "defaultCollection": "@angular-eslint/schematics"
+    "schematicCollections": [
+      "@angular-eslint/schematics"
+    ]
   }
 }

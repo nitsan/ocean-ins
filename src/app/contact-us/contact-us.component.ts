@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {EmailsService} from '../shared/emails/emails.service';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {UntypedFormBuilder, UntypedFormGroup, Validators} from '@angular/forms';
 import {FieldData, formFieldsData} from '../core/config/form-fields.data';
 import {FormValidationService} from '../core/services/form-validation.service';
 import { GtmService } from '../core/services/gtm.service';
@@ -11,12 +11,12 @@ import { GtmService } from '../core/services/gtm.service';
   styleUrls: ['./contact-us.component.scss']
 })
 export class ContactUsComponent {
-  public contactUsForm: FormGroup;
+  public contactUsForm: UntypedFormGroup;
   public isLoading: boolean;
   public showSentMessage: boolean;
   public formFieldsData = formFieldsData;
 
-  constructor(private fb: FormBuilder, private emailsService: EmailsService, private formValidationService: FormValidationService,
+  constructor(private fb: UntypedFormBuilder, private emailsService: EmailsService, private formValidationService: FormValidationService,
               private gtmService: GtmService) {
     this.isLoading = false;
     this.showSentMessage = false;
