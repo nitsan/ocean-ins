@@ -51,7 +51,7 @@
     "@angular/language-service": "^15.2.10",
     "@types/jasmine": "~3.6.0",
     "@types/jasminewd2": "^2.0.8",
-    "@types/node": "^12.12.62",
+    "@types/node": "^20.8.9",
     "@typescript-eslint/eslint-plugin": "^5.43.0",
     "@typescript-eslint/parser": "^5.43.0",
     "cypress": "^13.3.3",
