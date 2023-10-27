@@ -21,7 +21,12 @@
               "src/assets",
               "src/robots.txt",
               "src/favicon.ico",
-              "src/manifest.webmanifest"
+              "src/manifest.webmanifest",
+              {
+                "glob": "**/*",
+                "input": "node_modules/@builder.io/partytown/lib",
+                "output": "/~partytown"
+              }
             ],
             "styles": [
               "src/styles.scss"
