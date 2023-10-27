@@ -28,6 +28,7 @@ export class ContactUsComponent {
       message: ['', [Validators.required, Validators.minLength(10)]],
       isCustomer: [false]
     });
+    this.gtmService.sendEvent('contact-us', 'view');
   }
 
   get firstName() {
